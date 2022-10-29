@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+  <body>
+    <main>
+      <div class="img-container">
+        <img src="./images/drawers.jpg" alt="drawers" aria-hidden="true" />
+      </div>
+      <div class="text-container">
+        <h2>
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h2>
+        <p>
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I've got some simple tips to help
+          you make any room feel complete.
+        </p>
+
+        <div class="bottom-bar">
+          <div class="info" z-index="0">
+            <img
+              src="./images/avatar-michelle.jpg"
+              alt="Michelle"
+              aria-hidden="true"
+            />
+            <div class="name-date">
+              <p id="name">Michelle Appleton</p>
+              <p id="date">28 Jun 2020</p>
+            </div>
+          </div>
+          <div id="share-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="13"
+              id="share-icon"
+            >
+              <path
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+              />
+            </svg>
+            <div id="share-bar">
+              SHARE
+              <img
+                src="./images/icon-facebook.svg"
+                alt="facebook"
+                aria-hidden="true"
+              />
+              <img
+                src="./images/icon-twitter.svg"
+                alt="twitter"
+                aria-hidden="true"
+              />
+              <img
+                src="./images/icon-pinterest.svg"
+                alt="pinterest"
+                aria-hidden="true"
+              />
+              <div class="arrow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="share-bar-mobile">
+        SHARE
+        <img
+          src="./images/icon-facebook.svg"
+          alt="facebook"
+          aria-hidden="true"
+        />
+        <img src="./images/icon-twitter.svg" alt="twitter" aria-hidden="true" />
+        <img
+          src="./images/icon-pinterest.svg"
+          alt="pinterest"
+          aria-hidden="true"
+        />
+      </div>
+    </main>
+
+    <script>
+      var scrWidth = screen.width;
+      if (scrWidth <= 376) {
+        document
+          .getElementById("share-button")
+          .addEventListener("click", function () {
+            if (
+              document.getElementById("share-bar-mobile").style.display !=
+              "block"
+            ) {
+              document.getElementById("share-bar-mobile").style.display =
+                "block";
+              document.getElementById("share-button").style.backgroundColor =
+                "hsl(214, 17%, 51%)";
+              document.getElementById("share-icon").style.fill = "white";
+            } else {
+              document.getElementById("share-bar-mobile").style.display =
+                "none";
+              document.getElementById("share-button").style.backgroundColor =
+                "hsl(210, 46%, 95%)";
+              document.getElementById("share-icon").style.fill = "#6E8098";
+            }
+          });
+      }
+      if (scrWidth > 376) {
+        document
+          .getElementById("share-button")
+          .addEventListener("click", function () {
+            if (document.getElementById("share-bar").style.display != "block") {
+              document.getElementById("share-bar").style.display = "block";
+              document.getElementById("share-button").style.backgroundColor =
+                "hsl(217, 19%, 35%)";
+              document.getElementById("share-icon").style.fill = "white";
+            } else {
+              document.getElementById("share-bar").style.display = "none";
+              document.getElementById("share-button").style.backgroundColor =
+                "hsl(210, 46%, 95%)";
+              document.getElementById("share-icon").style.fill = "#6E8098";
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
